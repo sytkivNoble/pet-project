@@ -11,7 +11,6 @@ export default function Home() {
   const utils = trpc.useUtils();
 
   const { data: todos = [], error: queryError } = trpc.todos.getAll.useQuery();
-  console.log('queryError = ', queryError)
 
   // Handle query error
   if (queryError) {

@@ -2,8 +2,8 @@
   "name": "pet-project",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "dev": "pnpm --filter api dev && pnpm --filter web dev",
+    "build": "pnpm --filter api build && pnpm --filter web build && pnpm --filter database build",
+    "dev": "pnpm --parallel --filter api --filter web dev",
     "lint": "pnpm --filter api lint && pnpm --filter web lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
@@ -13,7 +13,7 @@
     "typescript": "^5.3.3"
   },
   "packageManager": "pnpm@8.15.4",
-  "workspaces": [
+  "projects": [
     "apps/*",
     "packages/*"
   ]
